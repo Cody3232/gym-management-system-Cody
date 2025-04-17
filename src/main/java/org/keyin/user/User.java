@@ -1,5 +1,7 @@
 // Script for User.java “I created a base User class to hold shared properties like name, password, and role. The Trainer, Member, and Admin classes inherit from this, which helps reduce code duplication and follows object-oriented programming best practices like inheritance and encapsulation.”
 
+//“Since the login logic only needs a few user details, I added a second constructor to support loading users from the database without requiring all their contact information.”
+
 package org.keyin.user;//
 
 //*
@@ -28,6 +30,13 @@ public User(String username, String password, String role, String email, String 
     this.email = email;
     this.phoneNumber = phoneNumber;
     this.address = address;
+}
+
+public User(long id, String username, String password, String role) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+    this.role = role;
 }
 
 // getter and setters
